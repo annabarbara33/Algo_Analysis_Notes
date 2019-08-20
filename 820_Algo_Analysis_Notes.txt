@@ -21,7 +21,8 @@ Chapter 1
 			* n = number of students
 		* Type problems
 			* Decision problem, answered yes or no
-			* Search problem, finding the solution from a 				  system (linear, polynomial, etc)
+			* Search problem, finding the solution from a
+			system (linear, polynomial, etc)
 			* Counting problem, how many solutions are
 			there?
 			* Optimization problem, finding the solution
