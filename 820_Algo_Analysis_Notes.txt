@@ -1,0 +1,28 @@
+Chapter 1
+
+	* Algorithm is at the heart of computing
+	* A sequence of computational (simple) steps that transform 
+	  input to output
+	* Description of an algorithm is finite
+	* Set of inputs scan be infinite
+	* First problem we will study is sorting
+	* Sorting needs termination, correctness, efficiency
+	* n! is a very bad number (I'm shocked)
+	* 2^59 seconds = 18 billion years apparently
+	* Which is bigger, 52! or 2^59? 52! is bigger
+	* Efficiency:
+		* O(n!), O(n^2), O(nlogn)
+		* What is the size of n? - bit size
+		* Computational thinking
+			* input = students with a general understanding 				  of algorithms
+			* ouput = students with a better understanding of 			  algorithms
+			* n = number of students
+		* Type problems
+			* Decision problem, answered yes or no
+			* Search problem, finding the solution from a 				  system (linear, polynomial, etc)
+			* Counting problem, how many solutions are there?
+			* Optimization problem, finding the solution that 			  optimizes some desire (i.e. I want the most 				  possible zeros, I want to minimize the hamming 				  weight)
+				* More on hamming weight: https://stackoverflow.com/questions/14555607/number-of-bits-set-in-a-number
+
+	* Areas
+		* Computation geometry, graphics game, numerical 				  algorithm, applied math, computational number 				  theory, cryptography/security, computer algebra, 			  error correcting code (ecc), graph algorithm, 				  internet, sorting data structures, database data 			  mining, learning algorithm, AI
