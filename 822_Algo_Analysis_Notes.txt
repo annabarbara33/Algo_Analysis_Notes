@@ -1,0 +1,93 @@
+* Input goes into an algorithm that produces an ouptut
+* A good algorithm will do/have/be:
+	* Terminate
+	* Correct - heuristic (??)
+	* Efficiency
+		* Time efficiency (main thing for us)
+		* Space efficiency (memory size)
+		* Randomness
+			* Less random = more efficient. Shocking.
+		* Energy
+* Types of Algorithms
+	* Sequential and Deterministic
+		* Sequential = runs step by step. Finish previous
+		step before running next one
+		* Determinisitc = next step will be determined by 
+		the previous one
+	* Parallel
+		* Running steps in parallel with each other
+		* Non sequential
+	 * Randomized
+		* Still have input and output but algorithm will have
+		randomness
+		* Non deterministic
+	* Approximate
+		* When a problem is known to be hard and you can't
+		find an optimized solution
+		* Find an output that isn't optimal but still works
+		* More efficient than trying to find 'correct' output
+		for the complex problem
+	* P ?= NP
+		* P = parameter
+		* NP = non deterministic parameter
+		* Something about approximation error?
+			* I think this type has a bad approximation error
+		* Largest facebook clique problem
+* Sorting Algorithms
+	* Input: a sequence of n numbers
+	* Output: a permutation/reordering of the input set where
+	each number is smaller than the one in front of it
+	* Insertion Sort Algorithm
+		* Like inserting cards into your hand when playing
+		games like Bridge
+		* Index j is always increasing as cards are being
+		added
+		* You have a new number being inserted at the index
+		following j that needs to be inserted. If they were
+		cards you could just throw it in there.
+		* Instead, you pull the new number out and compare it
+		to every number before it. If the number is bigger,
+		you move it to the next index. When you get to a
+		number that is smaller, you insert the new number.
+		** Next quiz will be doing an insertion **
+		* j moves at the end of the iteration
+		** pseudocode from book for insertion sort **
+	
+		Insertion-Sort(A, n)
+		for j = 2 to n
+			key = A[j]
+			// Insert A[j] into the sorted sequence
+			// A[1 ... j - 1]
+			i = j - 1
+			while i > 0 and A[i] < key
+				A[i + 1] = A[i]
+				i = i - 1
+			A[i + 1] = key
+
+		* Should use the same pseudocode conventions given in
+		the textbook on quizzes/exams
+
+* Quizzes will be in the last 15ish minutes of class. Open note and book but laptops must go away (unless your book is digital I
+think). Tuesday will be a quiz on insertion sort
+
+* Correctness
+	* Loop invariants help us understand why an algorithm gives
+	the correct answer
+	* For an insertion sort:
+		* At the start of each iteration of the outer for
+		loop, the loop indexed by j, the subarray A[1...j-1]
+		consists of the elements originally in that subarray
+		but in sorted order
+	* We need to show three things to use a loop invariant to
+	prove correctness
+		* initialization
+			* it is true prior to the first iteration of the
+			loop
+		* maintenance - the hard part
+			* if it is true before an iteration, it remaines
+			true for the next iteration
+		* termination
+			* when the loop terminates, the invariant gives a
+			useful property that helps show that the
+			algorithm is correct (usually the reason that the
+			loop terminated does this with the invariant)
