@@ -1,0 +1,127 @@
+
+* Midterm will be like a summation of all of the quizzes we have until that point
+	* Not the exact same questions but will be really similar,
+	same types of problems
+	* We will be getting our quizzes back once the grader is
+	finished grading them
+	* May start doing online quizzes
+	* QUIZ next Tuesday (9/3), make sure we have a device we can
+	take it on in case he can't print the quizzes easily
+* Merge sort idea is very simple
+	* Cut the array in half (either equal number or difference
+	of 1)
+	* Biggest problem with merge sort: you need extra space
+	* Sort the smaller arrays
+	* Merge the sorted smaller arrays
+		* Look at the first index of both arrays (pointers i
+		and j). Whichever number is smaller, put it in the
+		array. That pointer increments. Compare the pointers
+		again, smaller goes in the array, pointer increments.
+		Process continues until numbers are sorted.
+			* When you put infinity in the last index of the
+			right-hand small array, you don't need to worry
+			about when to stop? I'm struggling to follow.
+	* Divide and conquer approach
+	* Suppose that the two sub arrays are not sorted in
+	increasing order. Can you still run this algorithm?
+		* You may not get a sorted array but you can still
+		run the algorithm
+			** NEXT QUIZ ** we will get to unsorted arrays
+			and we will need to run this algorithm
+	* Example quiz question
+		* L = <5, 3, 7, 19> R = <3, 2, 101, 97>
+		* i = 5, j = 3 --> j goes in the array
+		* i = 5, j = 2 --> j goes in the array
+		* i = 5, j = 101 --> i goes in the array
+		* i = 3, j = 101 --> i goes in the array
+		* i = 7, j = 101 --> i goes in the array
+		* i = 19, j = 101 --> i goes in the array
+		* i = infinity, j = 101 --> j goes in the array
+		* i = infinity, j = 97 --> j goes in the array
+		* i = infinity, j = infinity --> stop
+		* final array = <3, 2, 5, 3, 7, 19, 101, 97>
+			* NOW I get the infinity thing I think
+
+	* Merge sort algorithm
+	Merge(A, p, q, r)
+		n1 = q - p + 1
+		n2 = r - q
+		Let L[1...n1+1] and R[1...n2+1] be new arrays
+		for i = 1 to n1
+			L[i] = A[p+i-1]
+		for j = 1 to n2
+			R[j]=A[q+j]
+		L[n1+1] = infinity
+		R[n2+1] = infinity
+		i = 1
+		j = 1
+		for k = p to r
+			if L[i] leq R[j]
+				A[k] = L[i]
+				i += 1
+			else
+				A[k] = R[j]
+				j += 1
+
+	* Complexity of a merge = Theta(r-p) = Theta(n) because
+	r - p is basically the number of elements
+
+	* Above algorithm is for the merge, recursive algorithm for
+	the merge sort
+	MergeSort(A, p, r)
+		if p < r // check for base case
+			q = (p + r)/2 // divide (rounded down)
+			MergeSort(A, p, q) // conquer
+			MergeSort(A, q+1, r) // conquer
+			Merge(A, p, q, r) // combine
+
+	* Whether the divide should be floor or ceil is something
+	we would be asked on a quiz/test. Crucial to have the if
+	and the floor
+	* Complexity of a merge sort (not just a merge) is
+	T(n) = Theta(n) + 2T(n/2) 
+		* No best or worst case, they're the same thing
+	* Some tree approach?
+		* Theta(n) breaks into T(n/2) and T(n/2)
+		* Theta and T turn into constants
+		* cn breaks into cn/2 and c/n2
+		* cn/2 breaks into T(n/4) and T(n/4) and the tree
+		keeps going until you get to 1
+		* Eventually get to log(n), in this class log base 2.
+		* Now you sum them up? I thought the answer was log(n)
+		* Each line sums to cn
+		* The answer is NOW cnlog(n) = Theta(nlogn)
+	** If none of the above makes sense, the complexity of a
+	merge sort (not just a merge) is Theta(nlogn) **
+	* Merge sort is more time efficient than an insertion sort
+		* Almost linear, why almost? Because log grows
+		slower..?
+	* Insertion sort is more space efficient than a merge sort
+		* Need to ask for extra space for a merge sort
+	* Can you do a merge sort in place?
+		* There's something like that but it's very hard, more
+		like quick sort or heap sort? I can't hear lol
+* Which is smaller?
+	* n^2 or nlogn?
+		* nlogn?
+	* n^1.5 or nlogn?
+		* nlogn
+	* n^(1.005) or nlogn?
+		* nlogn
+	* n^(1/50) or nlogn?
+		* nlogn
+	* A logarithmic function will always be smaller than n^c for
+	any c > 0.
+	* 2^n^1/50 or 2^logn?
+		* 2^logn because that's just n
+* Chapter 3 is Growth of Functions, which functions grow faster?
+	* n^1/50 or log^50n, which grows faster?
+		* n^1/50 > log^50n
+	* 2^n is exponential
+	* 2^logn is linar because it equals n
+	* 2^2logn is still polynomial, basically n^2
+	* 2^logn^2 = (2^logn)^logn = n^logn = almost polynomial
+* Quiz
+	* One problem will be think like computer, other will be
+	think like human
+	

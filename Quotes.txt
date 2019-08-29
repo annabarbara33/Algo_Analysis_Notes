@@ -1,1 +1,4 @@
 "You have sorting data structures; you put the data in a structure"
+"Don't do anything funny"
+"You heard of famous painter, Van Gogh?"
+"That's YOU- YOU don't do anything"
