@@ -1,0 +1,69 @@
+* Termination
+* Correctness
+* Efficiency
+	* Analyze the complexity of the algorithm
+		* Time, space, randomness
+		* Time is typically the most important for us
+		* The best way to analyze the complexity is
+		counting steps because it does not depend on the
+		machine or OS or anything, purely mathematical
+		analysis of the algorithm
+
+* Insertion sort pseudocode and step counting
+InsertionSort(A, n)
+	1 for j = 2 to n
+	2 	key = A[j]
+	3 	// insert A[j] into the sorted sequence A[1...j - 1]
+	4	i = j - 1
+	5	while i > 0 and A[i] < key
+	6		A[i + 1] = A[i]
+	7		i = i - 1
+	8	A[i + 1] = key
+
+	* Line 1
+		* cost = c_1, times = n
+	* Line 2
+		* cost = c_2, time = n - 1
+	* Line 3
+		* cost = 0, time = n - 1
+	* Line 4
+		* cost = c_4, time = n - 1
+	* Line 5
+		* cost = c_5, time = the sum from j = 2 to n of t_j
+		* Why is this number so weird? Becuase of j. You run 
+		the loop a bunch of times depending on what j is.
+	* Line 6
+		* cost = c_6, time = the sum from j = 2 to n of 
+		t_j - 1 
+	* Line 7
+		* cost = c_7, time = the sum from j = 2 to n of 
+		t_j - 1 
+	* Line 8
+		* cost = c_8, time = n - 1
+
+	* Best case senario for an insertion sort is an already
+	sorted array: Theta(n)
+	* Worst case senario for an insertion sort is an array in a
+	reverse sort 1+2+...+n Theta(n^2)
+	* Why big theta instead of big o? Big theta is more precise,
+	big O is for something else...?
+	* Your expectation should always be the worst case unless
+	otherwise specified
+	* Can we have a better algorithm for sorting? probs. 
+	* Insertion sort pros and cons:
+		* Pros: in place (not using extra memory), 
+		* Cons: not as (time?) efficient as we want because
+		you're always moving data
+	* Random Access Machine (RAM)
+
+* Merge Sort
+	* Divide and conquer 
+	* Assume you have a long list and somehow you cut it in the
+	middle, an equal (or almost equal) half. What do you do?
+		* Put pointers in each array and compare the elements,
+		a long distance comparison
+	* You ask for new memory and you compare the two pointers,
+	Put the smaller of the two in the new memory and increment
+	the pointer of the smaller number.
+	* Repeat process if the new array isn't entirely sorted
+	* Time complexity: Theta(n)
