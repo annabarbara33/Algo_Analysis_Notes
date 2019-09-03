@@ -1,0 +1,68 @@
+* Problem with Merge Sort?
+	* Space isn't good- need to ask for extra space to create
+	the sorted array
+* Order of growth is very important
+	* nlogn vs n^2 (merge vs insertion)
+	* nlogn ?= theta(n^2)
+		* false
+* Constant isn't important in this course but it is important in 
+other places
+	* 1/2(n^2) - 1000n ?= theta(n^2)
+		* true
+	* nlogn ?= O(n^2)
+		* true...?
+	* (n^2)(2^n) ?= O(3^n)
+		* true
+	* (n^2)(pi^n) ?= O(3^n)
+		* false
+	* (pi^n)/n^100 ?= O(3^n)
+		* false
+		* Why? Because pi is larger than 3 I think...?
+	* (n^2)(2^n) ?= theta(3^n)
+		* false
+	* 3^n ?= O(e^n)
+		* false
+	* 3^n ?= O(3^n)
+		* false
+	* 3^n - 2^n ?= O(3^n)
+		* false
+		* 3^n - 2^n > 1/2(3^n)
+	* (3^n) / logn ?= O(3^n)
+		* true
+		* x^n / logn < x^n - (x-1)^n
+	* n! ?= theta(2^n)
+		* false
+	* (n+1)! ?= O(n!)
+		* false
+	* (n+1)^3 ?= O(n^3)
+		* true
+	* 2^(n+1) ?= O(2^n)
+		* true
+	* 3^(2n) ?= O(3^n)
+		* not just false, but very false
+* Difference between theta and O: O is more like a less than or
+equal and theta is more like an equal
+	* It's about time someone tells me this
+	* Chapter 3 overview lists all inequality types for stuff
+	like O and theta (not sure what a general name for those 
+	things is)
+* lg = computer science log = log base 2
+	* Everywhere in my notes that says log should say lg
+* Now time for Big Omega...woo
+	* big omega is like greater than or equal to
+	* n^2 ?= big omega(nlogn)
+		* true
+	* n^2 ?= big omega(n^2 + n)
+		* true
+* Little Omega is strictly equal to
+	* n^2 + 3n ?= little omega(n^2 + n)
+		* false
+	* 3^2n ?= little omega(3^n)
+		* true
+* Sterling Formula
+	* n! = sqrt(2*pi*n)*((n/e)^n)*(1+O(n, pi, 1? who knows))
+* Doubly exponent
+	* 2^(2^n) ?= little omega(n!)
+		* true
+	* n! ?= O(2^(n^2))
+		* true 
