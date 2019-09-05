@@ -1,0 +1,88 @@
+* Among all complexity measures (Big O, big Theta, etc), big O is
+the most important (for worst case specifically? I think that's
+what he said). 
+* Divide and Conquer
+	* Merge sort uses a divide and conquer technique
+	* Max subarray problem
+		* Something about stock prices? Maybe I should look
+		into hearing aides...
+		* Increasing linear stock prices = buy at beginning
+		and sell at end
+		* Decreasing linear stock prices = get tf out
+		* Actual stock looking graph (lots of sharp peaks and
+		vallies), when should you buy and sell?
+			* Buy at lowest price and sell at highest price
+			to get the most profit but there's no good way
+			to tell when that will be
+			* Buy at lowest and sell at next maximum, break
+			up the graph a bit. First algorithm
+			* Sell at highest point, look back and see when 
+			the lowest time to buy would be. Second algorithm
+		* What if the graph has peaks and vallies but is still
+		generally decreasing?
+			* Above algorithms will fail, what would be a
+			better solution? If we have n dates, lets try all
+			of the ??? maybe pairs? 
+				* What would the complexity be? n choose 2.
+				* Naive approach: complexity is n choose 2
+				which is O(n^2).
+					* Bad approach. Easy to write the 
+					algorithm but inefficient 
+	* Divide and conquer approach for above problem
+		* Divide problem into two equal halves, how have three
+		total problems
+			* Buy and sell in first half
+			* Buy and sell in second half
+				* Both are recursive
+			* Buy in first half and sell in second half
+				* Non recursive
+				* Number of opportinuties to buy in the
+				first half: n/2
+				* Number of opportunities to sell in the 
+				second half: n/2
+				* Total complexity: (n^2)/4 I think he said
+				* Choose minimum in the first half and
+				maximum in the second half- really easy to
+				write. Changes algorithm to linear,
+				complexity is now O(nlogn)
+				* Complexity logic: 
+				T(n) = 2T(n/2) + cn, by the master theorem
+				T(n) = O(nlogn)
+			* Pick the best results from these three things
+			and that will be the solution
+	* We will have a quiz over the following problem *
+	* Strassen's Matrix Multiplication
+		* Matrix examples:
+			* I think you guys know what a matrix is
+			and I'm lazy so I'm not going to type those out
+		* Naive algorithm: nxn matrix need n^3 for
+		multiplication
+			* Probs don't use this one
+		* Gotta try divide and conquer, wooo
+			* divide nxn matricies into 4 equal sub matricies
+			A11, A12, A21, A22 and B11, B12, B21, B22
+			* Multiply and get one nxn matrix split into 4
+			equal parts
+				* First box will be A11*B11+A12*B12, etc
+				for other boxes
+			* Recursive!
+			* T(n) = 8T(n/2) + cn^2, by master theorem you
+			get T(n) = O(n^3). Yike.
+		* Now time for Strassen's approach, hopefully this is
+		a little better
+			* Um yikes. I check my phone for like 30 seconds 
+			and I'm completely lost...
+			* Somehow calculating only 7 things..? so you
+			save one multiplication. Need 18 additions but
+			it's somehow still faster? Because addition is 
+			always easy. 
+			* Equation is now:
+			T(n) = 7T(n/2) + cn^2
+			T(n) = n^(lg7)
+		* This will be the problem on the quiz. Given all of
+		the numbers for 1x1 matrix (?) and calculate all of
+		the S and Ps (in the textbook, chapter 4). Practice 
+		with problem 4.2-1 out of the book
+		* Will also have a tree problem on the quiz- drawing
+		the tree based on the T(n) equation
+		* Quiz will be on paper
